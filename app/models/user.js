@@ -2,15 +2,18 @@ import DS from 'ember-data';
 import { belongsTo, hasMany } from 'ember-data/relationships';
 import Ember from 'ember';
 
-export default DS.Model.extend({
-  username: DS.attr('string'),
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-  avatar: DS.attr('string'),
-  isAdmin: DS.attr('boolean', {
+const { Model, attr } = DS;
+
+export default Model.extend({
+  username: attr('string'),
+  email: attr('string'),
+  firstName: attr('string'),
+  lastName: attr('string'),
+  avatar: attr('string'),
+  isAdmin: attr('boolean', {
     defaultValue: false
   }),
-  created: DS.attr('date', {
+  created: attr('date', {
     defaultValue() {return new Date();}
   }),
   bookmarks: hasMany('bookmark'),
