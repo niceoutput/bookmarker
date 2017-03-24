@@ -1,10 +1,8 @@
 <h3>Users</h3>
 <p>{{testProperty}}</p>
 {{#each model as |user index|}}
-    <p>#{{index}} - {{user.fullName}}</p>
-    {{#each user.bookmarks as |bookmark|}}
-    {{else}}
-        <p>No bookmarks for user</p>
-    {{/each}}
+   {{#users-list user.avatar user.email}}
+    {{user.fullName}}
+   {{/users-list}}
 {{/each}}
 {{outlet}}
