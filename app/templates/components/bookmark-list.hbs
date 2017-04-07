@@ -2,5 +2,6 @@
     <a href="{{bookmark.link}}" target="_blank">
         {{bookmark-title bookmark.title bookmark.about }}
     </a>
+    <p>{{moment-from-now bookmark.created}}</p>
 </article>
 {{yield}}
