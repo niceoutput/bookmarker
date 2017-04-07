@@ -6,7 +6,9 @@ module('Unit | Helper | bookmark title');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = bookmarkTitle([42]);
-  assert.ok(result);
+  let result = bookmarkTitle(['canary', 'baz']);
+  assert.equal(result, 'canary - baz');
+  result = bookmarkTitle(['canary', null]);
+  assert.equal(result, 'canary');
 });
 
